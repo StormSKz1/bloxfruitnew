@@ -33,7 +33,7 @@ local oofHubMainMenu = Instance.new("ScreenGui")
 	Title.Size = UDim2.new(0, 200, 0, 50)
 	Title.Font = Enum.Font.FredokaOne
 	Title.Text = ""
-	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextColor3 = Color3.fromRGB(0, 255, 255)
 	Title.TextSize = 38
 	Roundify.Name = "Roundify"
 	Roundify.Parent = Start
@@ -234,7 +234,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 
 	GlowTabHolder.Name = "GlowTabHolder"
 	GlowTabHolder.Parent = LeftFrame
-	GlowTabHolder.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GlowTabHolder.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 	GlowTabHolder.BackgroundTransparency = 1.000
 	GlowTabHolder.BorderSizePixel = 0
 	GlowTabHolder.Position = UDim2.new(0, -15, 0, -15)
@@ -2856,7 +2856,6 @@ function Flux:Window(text, bottom,mainclr,toclose)
 end
 
 --game.Players.localPlayer:Kick("จะรันหาส้นตีนอะไรไอ้หน้าโง่ script ยังทำไม่เสร็จโว้ย!!")
-
 local win = Flux:Window("Strike Hub", "Blox Fruit", Color3.fromRGB(255, 0, 0), Enum.KeyCode.RightControl)
 local AutoFarm = win:Tab("AutoFarm", "http://www.roblox.com/asset/?id=6023426915")
        OldWorld = false
