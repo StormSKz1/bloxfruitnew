@@ -3,6 +3,7 @@ local ui = game:GetService("CoreGui"):FindFirstChild("FluxLib")
 if ui then
 	 ui:Destroy()
 end
+wait(.5)
 
 xwd = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 Gamename = xwd.Name
@@ -13,7 +14,7 @@ local oofHubMainMenu = Instance.new("ScreenGui")
 	local Roundify = Instance.new("ImageLabel")
 	
 	--Properties:
-	
+
 	oofHubMainMenu.Name = "Strike Hub Main Menu"
 	oofHubMainMenu.Parent = game.CoreGui
 	
@@ -32,9 +33,10 @@ local oofHubMainMenu = Instance.new("ScreenGui")
 	Title.Position = UDim2.new(0.296747953, 0, 0.25, 0)
 	Title.Size = UDim2.new(0, 200, 0, 50)
 	Title.Font = Enum.Font.FredokaOne
-	Title.Text = ""
-	Title.TextColor3 = Color3.fromRGB(0, 255, 255)
+	Title.Text = "The Best Hub"
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Title.TextSize = 38
+
 	Roundify.Name = "Roundify"
 	Roundify.Parent = Start
 	Roundify.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -47,7 +49,7 @@ local oofHubMainMenu = Instance.new("ScreenGui")
 	Roundify.ScaleType = Enum.ScaleType.Slice
 	Roundify.SliceCenter = Rect.new(100, 100, 100, 100)
 	Frame:TweenPosition(UDim2.new(0.5, 0,0.5, 0), Out, Bounce, 1)
-		wait(.7)
+		wait(2)
 		Title.Text = "S"
 	wait(.1)
 		Title.Text = "S T"
@@ -66,11 +68,7 @@ local oofHubMainMenu = Instance.new("ScreenGui")
 		wait(.1)
 		Title.Text = "S T R I K E   H U B"
       wait(.1)
-		Title.Text = "S T R I K E   H U B⚡."
-      wait(.1)
-		Title.Text = "S T R I K E   H U B⚡.."
-      wait(.1)
-		Title.Text = "S T R I K E   H U B⚡..."
+		Title.Text = "S T R I K E   H U B⚡"
 wait(1)
 
 Title.Text = "Checking Whitelist."
@@ -85,8 +83,6 @@ Title.Text = "Checking Whitelist.."
 wait(.1)
 Title.Text = "Checking Whitelist..."
 wait(.2)
-Title.Text = Gamename
-wait(1.5)
 Title.Text = "Loading GUI"
 wait(.1)
 Title.Text = "Loading GUI."
@@ -102,6 +98,8 @@ wait(.1)
 Title.Text = "Loading GUI.."
 wait(.1)
 Title.Text = "Loading GUI..."
+wait(.1)
+Title.Text = "FUCK YOU!"
 wait(.1)
 Frame:TweenPosition(UDim2.new(0.5, 0,1.1, 0), Out, Bounce, 1)
 wait(2)
@@ -2434,7 +2432,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 			Title.Font = Enum.Font.Gotham
 			Title.Text = text
 			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Title.TextSize = 20.000
+			Title.TextSize = 16.000
 			Title.TextTransparency = 0.100
 			Title.TextXAlignment = Enum.TextXAlignment.Left
 			
@@ -6016,24 +6014,6 @@ Misc:Line()
       end
 
        Misc:Line()
-       Misc:Label("Auto Farm Level Lock")
-       LockLevelValue = 1525
-       OldLevel = game.Players.localPlayer.Data.Level.Value
-       Misc:Slider("Select Level Lock","",1,LockLevelValue,1,function(value)
-          LockLevelValue = value
-       end)
-       Misc:Toggle("Lock Level","",false,function(value)
-          LockLevel = value
-       end)
-       spawn(function()
-          while wait(.1) do
-             if LockLevel then
-                if game.Players.localPlayer.Data.Level.Value >= LockLevelValue then
-                   game.Players.localPlayer:Kick("\n Auto Farm Completed Level : "..game.Players.localPlayer.Data.Level.Value.."\n Old Level : "..OldLevel)
-                end
-             end
-          end
-       end)
       spawn(function()
           while wait(.1) do
              if AuctoClick then
@@ -6058,10 +6038,100 @@ Misc:Line()
           end)
        end)
 
+       AutoFarm:Label("Auto Farm Level Lock")
+       LockLevelValue = 1525
+       OldLevel = game.Players.localPlayer.Data.Level.Value
+       AutoFarm:Slider("Select Level Lock","",1,LockLevelValue,1,function(value)
+          LockLevelValue = value
+       end)
+       AutoFarm:Toggle("Lock Level","",false,function(value)
+          LockLevel = value
+       end)
+       spawn(function()
+          while wait(.1) do
+             if LockLevel then
+                if game.Players.localPlayer.Data.Level.Value >= LockLevelValue then
+                   game.Players.localPlayer:Kick("\n Auto Farm Completed Level : "..game.Players.localPlayer.Data.Level.Value.."\n Old Level : "..OldLevel)
+                end
+             end
+          end
+       end)
+
+       local fake = win:Tab("Fake Stats", "http://www.roblox.com/asset/?id=6023426915")
+       fake:Textbox("Beli","", true, function(value)
+          game.Players.LocalPlayer.Data.Beli.Value = value 
+       end)
+       
+       fake:Textbox("Level","", true, function(value)
+          game.Players.LocalPlayer.Data.Level.Value = value 
+       end)
+       
+       fake:Textbox("Points","", true, function(value)
+          game.Players.LocalPlayer.Data.Points.Value = value 
+       end)
+       
+       fake:Textbox("Fragments","", true, function(value)
+          game.Players.LocalPlayer.Data.Fragments.Value = value 
+       end)
+       
+       fake:Textbox("Bounty/Honor","", true, function(value)
+          game.Players.LocalPlayer.leaderstats["Bounty/Honor"].Value = value 
+       end)
+       fake:Label("Haki Stage select")
+       fake:Button("Stage 0","",function()
+         local args = {
+            [1] = "ChangeBusoStage",
+            [2] = 0
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      end)
+      fake:Button("Stage 1","",function()
+         local args = {
+            [1] = "ChangeBusoStage",
+            [2] = 1
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      end)
+      fake:Button("Stage 2","",function()
+         local args = {
+            [1] = "ChangeBusoStage",
+            [2] = 2
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      end)
+      fake:Button("Stage 3","",function()
+         local args = {
+            [1] = "ChangeBusoStage",
+            [2] = 3
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      end)
+      fake:Button("Stage 4","",function()
+         local args = {
+            [1] = "ChangeBusoStage",
+            [2] = 4
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      end)
+      fake:Button("Stage 5","",function()
+         local args = {
+            [1] = "ChangeBusoStage",
+            [2] = 5
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      end)
+
        local Setting = win:Tab("Setting", "http://www.roblox.com/asset/?id=6023426915")
-       Setting:Label("Credit | Strike Hub")
+       Setting:Label("🚀Strike Hub⚡")
      Setting:Button("Copy link discord | 🚀Strike Hub","",function()
         setclipboard("https://discord.gg/XK4c97TbkY")
+        Flux:Notification("Copied! Success", "OK")
      end)
      Setting:Line()
        Setting:Button("Rejoin","",function()
@@ -6148,6 +6218,7 @@ Misc:Line()
           Teleport()
       end)
      Setting:Line()
+     local ui = game:GetService("CoreGui"):FindFirstChild("FluxLib")
      Setting:Button("Destroy Gui","",function()
         ui:Destroy()
 end)
@@ -6157,25 +6228,4 @@ ZoomDistance = 200
 Setting:Slider("Select Distance","",0,5000,ZoomDistance,function(value)
    ZoomDistance = value
    game.Players.LocalPlayer.CameraMaxZoomDistance = ZoomDistance
-end)
-
-local fake = win:Tab("Fake Stats", "http://www.roblox.com/asset/?id=6023426915")
-fake:Textbox("Beli","", false, function(value)
-   game.Players.LocalPlayer.Data.Beli.Value = value 
-end)
-
-fake:Textbox("Level","", false, function(value)
-   game.Players.LocalPlayer.Data.Level.Value = value 
-end)
-
-fake:Textbox("Points","", false, function(value)
-   game.Players.LocalPlayer.Data.Points.Value = value 
-end)
-
-fake:Textbox("Fragments","", false, function(value)
-   game.Players.LocalPlayer.Data.Fragments.Value = value 
-end)
-
-fake:Textbox("Bounty/Honor","", false, function(value)
-   game.Players.LocalPlayer.leaderstats["Bounty/Honor"].Value = value 
 end)
