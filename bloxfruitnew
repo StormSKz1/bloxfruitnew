@@ -3217,6 +3217,16 @@ local AutoFarm = win:Tab("AutoFarm", "http://www.roblox.com/asset/?id=6023426915
              game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
              AFM = vu
              AFMMain = vu 
+
+             _G.F = v
+             if _G.F == false then return end
+               while _G.F do wait()
+                 for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
+                     if v.Name == "Humanoid" then
+                         v.Sit = true
+                     end
+                 end
+             end
           end	
        end)
 
@@ -3252,22 +3262,11 @@ local AutoFarm = win:Tab("AutoFarm", "http://www.roblox.com/asset/?id=6023426915
 
        AutoFarm:Line()
        AutoFarm:Label("Auto Farm Setting")
-       AutoFarm:Toggle("Monster Lock","",false,function(v)
-         _G.F = v
-         if _G.F == false then return end
-           while _G.F do wait()
-             for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-                 if v.Name == "Humanoid" then
-                     v.Sit = true
-                 end
-             end
-         end
-      end)
        AutoFarm:Toggle("Hide HitBox","",true,function(Value)
           HideHitBlox = Value  
        end)
        AUTOHAKI = false
-       AutoFarm:Toggle("Auto Haki","",false,function(Value)
+       AutoFarm:Toggle("Auto Haki","",true,function(Value)
           AUTOHAKI = Value  
        end)
        AutoFarm:Toggle("Auto Observation haki","",false,function(Value)
@@ -4131,10 +4130,10 @@ function autofarm()
                                    if setsimulationradius then 
                                       setsimulationradius(1e+1598, 1e+1599)
                                    end
-                                   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 15, 15)
+                                   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 1000, 15)
                                    PosMon = v.HumanoidRootPart.CFrame
                                 else
-                                   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 15, 15)
+                                   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 1000, 15)
                                 end
                                 v.HumanoidRootPart.CanCollide = false
                              else
@@ -5906,6 +5905,24 @@ end)
 Misc:Label("Buy Item & Abilities")
 Misc:Line()
       Misc:Label("==| Abilities |==")
+
+Misc:Button("Re Roll Race","",function()
+         local args = {
+            [1] = "BlackbeardReward",
+            [2] = "Reroll",
+            [3] = "1"
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+         local args = {
+            [1] = "BlackbeardReward",
+            [2] = "Reroll",
+            [3] = "2"
+         }
+
+         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
       Misc:Button("Buy Stats Refund (2500 Fragment)","",function()
         local args = {
            [1] = "BlackbeardReward",
