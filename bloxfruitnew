@@ -2853,7 +2853,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	return Tabs
 end
 
-local win = Flux:Window("Strike Hub", "Blox Fruit", Color3.fromRGB(255, 0, 0), Enum.KeyCode.RightControl)
+--local win = Flux:Window("Strike Hub", "Blox Fruit", Color3.fromRGB(255, 0, 0), Enum.KeyCode.RightControl)
 local AutoFarm = win:Tab("AutoFarm", "http://www.roblox.com/asset/?id=6023426915")
        OldWorld = false
        newworld = false
