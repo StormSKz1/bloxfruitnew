@@ -1,8 +1,4 @@
 
-local key = _G.Keys
-local check = "https://raw.githubusercontent.com/StormSKz1/Keys/main/keybloxfruits" .. key --Key Checking 
-
-if game:HttpGet(check) == "Whitelisted" then
 local ui = game:GetService("CoreGui"):FindFirstChild("FluxLib")
 if ui then
 	 ui:Destroy()
@@ -6250,7 +6246,3 @@ Setting:Slider("Select Distance","",0,5000,ZoomDistance,function(value)
    ZoomDistance = value
    game.Players.LocalPlayer.CameraMaxZoomDistance = ZoomDistance
 end)
-
-else
-   game.Players.LocalPlayer:Kick("ไปเอา Keys มาใส่ด้วยไอ้สัสนรก!!")  
-end
