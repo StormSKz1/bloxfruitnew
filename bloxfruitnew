@@ -1,6 +1,6 @@
 
 local key = _G.Keys
-local check = "https://shojihub.000webhostapp.com/paidcheck.php?key=" .. key --Key Checking 
+local check = "https://raw.githubusercontent.com/StormSKz1/Keys/main/keybloxfruits" .. key --Key Checking 
 
 if game:HttpGet(check) == "Whitelisted" then
 local ui = game:GetService("CoreGui"):FindFirstChild("FluxLib")
