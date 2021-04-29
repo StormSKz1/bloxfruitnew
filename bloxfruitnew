@@ -33,7 +33,7 @@ local oofHubMainMenu = Instance.new("ScreenGui")
 	Title.Position = UDim2.new(0.296747953, 0, 0.25, 0)
 	Title.Size = UDim2.new(0, 200, 0, 50)
 	Title.Font = Enum.Font.FredokaOne
-	Title.Text = "The Best Hub"
+	Title.Text = ""
 	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Title.TextSize = 38
 
@@ -100,9 +100,9 @@ wait(.1)
 Title.Text = "Loading GUI..."
 wait(.1)
 Title.Text = "FUCK YOU!"
-wait(.1)
+wait(1)
 Frame:TweenPosition(UDim2.new(0.5, 0,1.1, 0), Out, Bounce, 1)
-wait(2)
+wait(.4)
 
 local Flux = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local PresetColor = Color3.fromRGB(66, 134, 255)
