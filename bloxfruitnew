@@ -358,7 +358,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 
 		NotificationFrameGlow.Name = "NotificationFrameGlow"
 		NotificationFrameGlow.Parent = NotificationFrame
-		NotificationFrameGlow.BackgroundColor3 = Color3.fromRGB(204, 255, 255)
+		NotificationFrameGlow.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		NotificationFrameGlow.BackgroundTransparency = 1.000
 		NotificationFrameGlow.BorderSizePixel = 0
 		NotificationFrameGlow.Position = UDim2.new(0, -15, 0, -15)
@@ -371,7 +371,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 
 		NotificationTitle.Name = "NotificationTitle"
 		NotificationTitle.Parent = NotificationFrame
-		NotificationTitle.BackgroundColor3 = Color3.fromRGB(204, 255, 255)
+		NotificationTitle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		NotificationTitle.BackgroundTransparency = 1.000
 		NotificationTitle.Position = UDim2.new(0.0400609747, 0, 0.0761325806, 0)
 		NotificationTitle.Size = UDim2.new(0, 111, 0, 34)
@@ -384,7 +384,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 
 		CloseBtn.Name = "CloseBtn"
 		CloseBtn.Parent = NotificationFrame
-		CloseBtn.BackgroundColor3 = Color3.fromRGB(204, 255, 255)
+		CloseBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		CloseBtn.ClipsDescendants = true
 		CloseBtn.Position = UDim2.new(0.0403124988, 0, 0.720855951, 0)
 		CloseBtn.Size = UDim2.new(0, 366, 0, 43)
@@ -6241,8 +6241,45 @@ end)
 end)
 
 Setting:Line()
-ZoomDistance = 200
-Setting:Slider("Select Distance","",0,5000,ZoomDistance,function(value)
-   ZoomDistance = value
-   game.Players.LocalPlayer.CameraMaxZoomDistance = ZoomDistance
+Setting:Textbox("Select Distance","Write the distance you want",true,function(value)
+   game.Players.LocalPlayer.CameraMaxZoomDistance = value
+   Flux:Notification("Your Distance :"..game.Players.LocalPlayer.CameraMaxZoomDistance , "OK")
+end)
+
+Setting:Textbox("Bugs Report", "Write your comment on what we lack or should update in our future script", true, function(t)
+   print(t)
+if _G.PHEWWWWW == nil then
+
+
+local HttpService = game:GetService("HttpService");
+
+function SendMessage(Webhook, Message, Botname)
+  if not string.find(Webhook, "https://discordapp.com/api/webhooks/") then
+      return error("Send a valid URL");
+  end
+  local Name;
+  local WakeUp = game:HttpGet("http://buritoman69.glitch.me");
+  local API = "http://buritoman69.glitch.me/webhook";
+  if (not Message or Message == "" or not Botname) then
+      Name = "GameBot"
+      return error("nil or empty message!")
+  else
+      Name = Botname;
+  end
+  local Body = {
+      ['Key'] = tostring("applesaregood"),
+      ['Message'] = tostring(Message),
+      ['Name'] = Name,
+      ['Webhook'] = Webhook    
+  }
+  Body = HttpService:JSONEncode(Body);
+  local Data = game:HttpPost(API, Body, false, "application/json")
+  return Data or nil;
+end
+
+local MESSS = game.Players.LocalPlayer.Character.Name
+   print(_G.PHEWWWWW)
+   SendMessage("https://discordapp.com/api/webhooks/837160057288392705/bQlHt0V1Acyis0-ANbzSlaAMnFGIRh9q0-VNLgPnLXg9sNiQ_egBL-CwDub-45MX2t3i",MESSS ..": " ..t, "Bugs Report for [Bloxfruits]")
+   Flux:Notification("Send Bugs success!!","OK")
+end
 end)
