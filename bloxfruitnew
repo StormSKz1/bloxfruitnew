@@ -49,7 +49,7 @@ local oofHubMainMenu = Instance.new("ScreenGui")
 	Roundify.ScaleType = Enum.ScaleType.Slice
 	Roundify.SliceCenter = Rect.new(100, 100, 100, 100)
 	Frame:TweenPosition(UDim2.new(0.5, 0,0.5, 0), Out, Bounce, 1)
-		wait(2)
+		wait(.4)
 		Title.Text = "S"
 	wait(.1)
 		Title.Text = "S T"
@@ -100,7 +100,7 @@ wait(.1)
 Title.Text = "Loading GUI..."
 wait(.1)
 Title.Text = "FUCK YOU!"
-wait(.1)
+wait(1)
 Frame:TweenPosition(UDim2.new(0.5, 0,1.1, 0), Out, Bounce, 1)
 wait(2)
 
@@ -2855,7 +2855,7 @@ end
 
 --game.Players.localPlayer:Kick("จะรันหาส้นตีนอะไรไอ้หน้าโง่ script ยังทำไม่เสร็จโว้ย!!")
 local win = Flux:Window("Strike Hub", "Blox Fruit", Color3.fromRGB(255, 0, 0), Enum.KeyCode.RightControl)
-local AutoFarm = win:Tab("AutoFarm", "http://www.roblox.com/asset/?id=6023426915")
+local AutoFarm = win:Tab("AutoFarm", "http://www.roblox.com/asset/?id=6035181867")
        OldWorld = false
        newworld = false
        Test = "Magnet" 
@@ -4408,7 +4408,7 @@ function autofarm()
            end
         end)
 
-        local Players = win:Tab("Players", "http://www.roblox.com/asset/?id=6023426915")
+        local Players = win:Tab("Players", "http://www.roblox.com/asset/?id=6022668935")
         PlayerName = {}
         for i,v in pairs(game.Players:GetChildren()) do  
            table.insert(PlayerName ,v.Name)
@@ -4483,7 +4483,7 @@ function autofarm()
            end 
         end)
 
-       local Stats = win:Tab("Stats", "http://www.roblox.com/asset/?id=6023426915")    
+       local Stats = win:Tab("Stats", "http://www.roblox.com/asset/?id=6035107925")    
        melee = false
        Stats:Toggle("Melee","",false,function(value)
           melee = value    
@@ -4557,7 +4557,7 @@ function autofarm()
        pointValue = value
 end)
 
-       local Teleport = win:Tab("Teleport", "http://www.roblox.com/asset/?id=6023426915")
+       local Teleport = win:Tab("Teleport", "http://www.roblox.com/asset/?id=6035190846")
        Teleport:Toggle("Ctrl + Click = TP","",false,function(vu)
           CTRL = vu
        end)
@@ -4716,7 +4716,7 @@ end)
              game.Players.localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2850.20068, 7.39224768, 5354.99268)
           end)
        end
-       local Raids = win:Tab("ESP - Dungeon", "http://www.roblox.com/asset/?id=6023426915")
+       local Raids = win:Tab("ESP - Dungeon", "http://www.roblox.com/asset/?id=6034328959")
        Raids:Toggle("ESP Player","",false,function(Value)
          PLYESP = Value
          Findply(PLYESP)
@@ -5236,7 +5236,7 @@ end)
                 end
              end)
             end
-local Fruit = win:Tab("Devil Fruit", "http://www.roblox.com/asset/?id=6023426915")
+local Fruit = win:Tab("Devil Fruit", "http://www.roblox.com/asset/?id=6034483671")
 Fruit:Label("Devil Fruit Sniper")
 Fruit:Toggle("Bomb Fruit","",false,function(t)
    _G.Q = t
@@ -5539,7 +5539,7 @@ Fruit:Toggle("Auto Buy Random Fruits","",false,function(t)
     end
 end)
 
-       local Misc = win:Tab("Misc - BuyItem", "http://www.roblox.com/asset/?id=6023426915")
+       local Misc = win:Tab("Misc - BuyItem", "http://www.roblox.com/asset/?id=6034684933")
        local LocalPlayer = game:GetService'Players'.LocalPlayer
        local originalstam = LocalPlayer.Character.Energy.Value
        function infinitestam()
@@ -6144,7 +6144,7 @@ end)
          game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
       end)
 
-       local Setting = win:Tab("Setting", "http://www.roblox.com/asset/?id=6023426915")
+       local Setting = win:Tab("Setting", "http://www.roblox.com/asset/?id=6031280882")
        Setting:Label("🚀Strike Hub⚡")
      Setting:Button("Copy link discord | 🚀Strike Hub","",function()
         setclipboard("https://discord.gg/XK4c97TbkY")
