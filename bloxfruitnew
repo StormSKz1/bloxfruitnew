@@ -100,9 +100,9 @@ wait(.1)
 Title.Text = "Loading GUI..."
 wait(.1)
 Title.Text = "FUCK YOU!"
-wait(1)
+wait(.1)
 Frame:TweenPosition(UDim2.new(0.5, 0,1.1, 0), Out, Bounce, 1)
-wait(.4)
+wait(2)
 
 local Flux = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local PresetColor = Color3.fromRGB(66, 134, 255)
@@ -809,7 +809,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 					TweenService:Create(
 						Circle,
 						TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{BackgroundColor3 = Color3.fromRGB(204, 255, 255)}
+						{BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
 					):Play()
 					TweenService:Create(
 						CircleSmall,
@@ -899,7 +899,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 			CircleSmall.Parent = Circle
 			CircleSmall.Active = true
 			CircleSmall.AnchorPoint = Vector2.new(0.5, 0.5)
-			CircleSmall.BackgroundColor3 = Color3.fromRGB(204, 255, 255)
+			CircleSmall.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			CircleSmall.BackgroundTransparency = 1.000
 			CircleSmall.Position = UDim2.new(0.485673368, 0, 0.503000021, 0)
 			CircleSmall.Size = UDim2.new(0, 9, 0, 9)
@@ -919,7 +919,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 
 			ToggleCircle.Name = "ToggleCircle"
 			ToggleCircle.Parent = ToggleFrame
-			ToggleCircle.BackgroundColor3 = Color3.fromRGB(204, 255, 255)
+			ToggleCircle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			ToggleCircle.Position = UDim2.new(0, 0, -0.272727281, 0)
 			ToggleCircle.Selectable = true
 			ToggleCircle.Size = UDim2.new(0, 17, 0, 17)
@@ -2547,7 +2547,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 
 			ArrowBtn.Name = "ArrowBtn"
 			ArrowBtn.Parent = Textbox
-			ArrowBtn.BackgroundColor3 = Color3.fromRGB(204, 255, 255)
+			ArrowBtn.BackgroundColor3 = Color3.fromRGB(255, 00, 0)
 			ArrowBtn.BackgroundTransparency = 1.000
 			ArrowBtn.Position = UDim2.new(0.903719902, 0, 0, 0)
 			ArrowBtn.Size = UDim2.new(0, 33, 0, 37)
@@ -2647,7 +2647,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 					TweenService:Create(
 						Circle,
 						TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{BackgroundColor3 = Color3.fromRGB(204, 255, 255)}
+						{BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
 					):Play()
 					TweenService:Create(
 						CircleSmall,
@@ -2816,7 +2816,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 					TweenService:Create(
 						Circle,
 						TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{BackgroundColor3 = Color3.fromRGB(204, 255, 255)}
+						{BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
 					):Play()
 					TweenService:Create(
 						CircleSmall,
